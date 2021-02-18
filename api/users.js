@@ -16,18 +16,11 @@ userRouter.get("/", async (req, res) => {
 
 // ____Creating_A_New_User_____
 userRouter.post("/", async (req, res) => {
-    const { userName, password, Name, Gender, DOB, Preferred_Intensity, Fitness_Level, Resources, Preferred_Age_Range, Video_Or_In_Person } = req.body
+    const { userName, password, Name, } = req.body
     const userData = { 
         userName: userName,
         password: password,
-        Name: Name,
-        Gender: Gender,
-        DOB: DOB,
-        Preferred_Intensity: Preferred_Intensity,
-        Fitness_Level: Fitness_Level,
-        Resources: Resources,
-        Preferred_Age_Range: Preferred_Age_Range,
-        Video_Or_In_Person: Video_Or_In_Person
+        Name: Name
     }
     let createdUser = await user.create(userData)
     return res.send(createdUser)
