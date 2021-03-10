@@ -1,6 +1,6 @@
 import {express} from '../Helpers_and_Imports/libs_required.js'
-    const router = express.Router()
-    import barber from '../DB/Models/barber.js'
+const router = express.Router()
+import barber from '../DB/Models/barber.js'
 
 // Router is mounted at /api/v1/barbers , all routes after this will be prefixed with this
 
