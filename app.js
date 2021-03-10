@@ -2,7 +2,7 @@
 import { express } from './Helpers_and_Imports/libs_required.js'
 import { userRouter } from './api/users.js'
 const app = express(),
-port = process.env.PORT || 7000
+port = process.env.PORT || 7000;
 
 app.use(cors())
 
