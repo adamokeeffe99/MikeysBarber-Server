@@ -1,5 +1,5 @@
 // Variable Declarations and Imports
-import { express } from './Helpers_and_Imports/libs_required.js'
+import { express, cors } from './Helpers_and_Imports/libs_required.js'
 import { userRouter } from './api/users.js'
 const app = express(),
 port = process.env.PORT || 7000;
@@ -7,7 +7,7 @@ port = process.env.PORT || 7000;
 app.use(cors())
 
 // Middlewares
-app.use(express.json())
+app.use(express.json());
 
 // Routes
 app.get("/", (req,res) => {
