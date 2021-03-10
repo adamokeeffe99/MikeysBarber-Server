@@ -1,24 +1,17 @@
-// Setting up my User Schema
-import { mongoose } from '../connection.js';
+import {mongoose} from '../connection.js'
 const userSchema = new mongoose.Schema({
-    userName: String,
-    password: String,
-    Name: String,
-    
-    Resources: [String],
-    
-    Messages: [{
+    firstName: String,
+    Surname: String,
+    Mobile: String,
+    DOB: String,
+    Medical_Card: Boolean,
+    PPS_Number: String,
+    Car_Reg: String,
+    Surgery: Boolean,
+    Appointments: [{
         type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
-    }],
-    Matches: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "User"
-    }],
-    Sessions: [{
-        type: mongoose.Schema.Types.ObjectId,
-        ref: "Session"
+        ref: "Appointment"
     }]
-}),
+})
 user = mongoose.model("User", userSchema)
-export { user }
+export default user

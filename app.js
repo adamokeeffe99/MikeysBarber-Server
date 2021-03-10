@@ -1,8 +1,10 @@
 // Variable Declarations and Imports
 import { express, cors } from './Helpers_and_Imports/libs_required.js'
-import { userRouter } from './api/users.js'
+import appointment from './api/appointments.js'
+import barber from './api/barbers.js'
 const app = express(),
-port = process.env.PORT || 7000;
+port = process.env.PORT || 7000
+
 
 app.use(cors())
 
@@ -16,7 +18,8 @@ app.get("/", (req,res) => {
     });
 })
 
-app.use("/api/v1/users", userRouter)
+app.use("/api/v1/appointments", appointment)
+app.use("/api/v1/barbers", barber)
 
 // App Listener 
 app.listen(port , () => {
