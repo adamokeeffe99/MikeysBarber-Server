@@ -1,6 +1,7 @@
 import {express} from '../Helpers_and_Imports/libs_required.js'
 const  router = express.Router()
 import appointment from '../DB/Models/appointment.js'
+import user from '../DB/Models/user.js'
 
     // Router is mounted at /api/v1/appointments , all routes after this will be prefixed with this
 
