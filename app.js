@@ -4,6 +4,7 @@ import { userRouter } from './api/users.js'
 const app = express(),
 port = process.env.PORT || 7000
 
+app.use(cors())
 
 // Middlewares
 app.use(express.json())
