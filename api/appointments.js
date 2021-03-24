@@ -16,16 +16,12 @@ router.get("/" , async(req,res) => {
 })
 
 router.post("/" , async(req , res)=> {
-const { firstName ,Surname , Mobile , DOB , Medical_Card , PPS_Number , Car_Reg , Surgery ,  Month , DayName , DayDate , Time } = req.body
+const { firstName ,Surname , Email , Month , DayName , DayDate , Time } = req.body
     const userData = {
         firstName: firstName,
         Surname: Surname,
-        Mobile: Mobile,
-        DOB: DOB,
-        Medical_Card: Medical_Card,
-        PPS_Number:PPS_Number,
-        Car_Reg: Car_Reg,
-        Surgery: Surgery
+        Email: Email,
+        
     };
     let createdUser = await user.create(userData)
     let foundAppointment = await appointment.find({Time: Time, Month: Month, DayName: DayName , DayDate: DayDate})
